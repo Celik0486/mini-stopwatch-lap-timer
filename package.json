@@ -1,0 +1,17 @@
+{
+  "name": "mini-stopwatch-lap-timer",
+  "version": "0.1.0",
+  "description": "Monotonic stopwatch with lap splits, cumulative time, and a custom clock option for deterministic tests.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {}
+}
