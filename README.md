@@ -24,3 +24,10 @@ I needed a stopwatch that recorded per-lap split deltas alongside cumulative ela
 - `stop()` is idempotent — a second call returns the frozen reading without re-reading the clock.
 - `split()` only works while running; it throws if stopped or never started.
 - `reset()` clears laps too. Per-stop segment totals are not modeled here; derive them from the lap list if you need them.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
